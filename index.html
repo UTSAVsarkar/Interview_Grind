@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>180 Days to Interview-Ready</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#14213d;--mut:#5f6b85;--line:#e3dfd3;--acc:#e8a317;--acc2:#2f4bd6;--ok:#1f9d6b;--t1:#d6453d;--t2:#e8821a;--t3:#3a8f6f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1426;--card:#17203a;--ink:#eef1fa;--mut:#9aa5c4;--line:#27335a;--acc:#ffc447;--acc2:#7f95ff}}
+:root[data-theme="dark"]{--bg:#0e1426;--card:#17203a;--ink:#eef1fa;--mut:#9aa5c4;--line:#27335a;--acc:#ffc447;--acc2:#7f95ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 'Bricolage Grotesque',system-ui,sans-serif}
+.w{max-width:880px;margin:0 auto;padding:20px 16px 80px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.top b{font-size:15px;color:var(--mut)}
+button{font:inherit;cursor:pointer;color:inherit}
+.ghost{background:none;border:1px solid var(--line);border-radius:99px;padding:6px 14px}
+:focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
+.hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin:28px 0;padding:28px;border-radius:28px;background:linear-gradient(135deg,#14213d,#2f3f8f,#5b3fb5,#14213d);background-size:300% 300%;animation:g 20s ease infinite;color:#fff;position:relative;overflow:hidden}
+@keyframes g{50%{background-position:100% 50%}}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 8%,rgba(255,196,71,.4),transparent 45%);pointer-events:none}
+.gr{margin:0 0 10px;opacity:.85;font-size:15px}
+.q::before{content:"\201C";display:block;font-size:56px;line-height:.6;color:var(--acc)}
+.hero h1{margin:0;font-size:clamp(38px,8vw,72px);line-height:1;font-weight:800;letter-spacing:-.03em}
+.hero h1 small{font-size:.4em;font-weight:500;opacity:.7;letter-spacing:0}
+.q{font:italic 400 clamp(18px,3vw,22px)/1.45 'Source Serif 4',Georgia,serif;margin:18px 0 0;max-width:46ch}
+.ring{position:relative;width:150px;height:150px}.ring svg{transform:rotate(-90deg)}
+.ring span{position:absolute;inset:0;display:grid;place-items:center;font-size:32px;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.st b{display:block;font-size:26px;line-height:1.1}.st i{font-style:normal;color:var(--mut);font-size:14px}
+.focus{background:var(--card);border:2px solid var(--acc);border-radius:20px;padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.focus h3{margin:0;font-size:20px}.focus p{margin:2px 0 0;color:var(--mut);font-size:14px}
+.cta{background:var(--acc);color:#14213d;border:0;border-radius:99px;padding:10px 18px;font-weight:700}
+.cta.done{background:var(--ok);color:#fff}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 16px}
+.chips button{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px;font-size:14px}
+.chips button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.t{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:16px;margin-bottom:10px;overflow:hidden}
+.t.fin{border-left-color:var(--ok)}
+.h{width:100%;display:grid;grid-template-columns:1fr auto;gap:4px 12px;text-align:left;background:none;border:0;padding:14px 16px}
+.h strong{font-size:18px}.h em{font-style:normal;font-size:13px;color:var(--mut)}
+.bar{grid-column:1/-1;height:6px;background:var(--line);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--c);transition:width .3s}
+.t.fin .bar i{background:var(--ok)}
+.b{display:none;padding:0 12px 14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.sec{background:var(--bg);border-radius:12px;padding:8px 12px}.sec.sd{outline:2px solid var(--ok)}
+.sec h4{display:flex;justify-content:space-between;margin:2px 0 4px;font-size:15px}.sec h4 em{font-style:normal;color:var(--mut);font-size:13px}
+.t.open .b{display:grid}
+.b label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer;font-size:15px}
+.b input{accent-color:var(--ok);width:18px;height:18px;margin-top:2px;flex:none}
+.b input:checked+span{color:var(--mut);text-decoration:line-through}
+.msg{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:99px;transition:transform .3s;z-index:9;max-width:90%;text-align:center}
+.msg.on{transform:translate(-50%,0)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 18px;margin-bottom:16px}.card h3{margin:0 0 10px;font-size:17px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.row .card{margin:0}.row{margin-bottom:16px}
+#mis label{display:flex;gap:10px;padding:5px 0;cursor:pointer;font-size:15px}#mis input{accent-color:var(--ok);width:18px;height:18px;margin-top:2px;flex:none}
+#why{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:10px 12px;font:inherit}#rank{margin:10px 0 0;color:var(--mut);font-size:14px}
+#heat{display:grid;grid-template-columns:repeat(30,1fr);gap:3px}#heat i{aspect-ratio:1;border-radius:4px;background:var(--line)}
+#heat .on{background:var(--ok)}#heat .miss{background:rgba(214,69,61,.28)}#heat .fut{opacity:.4}#heat .now{outline:2px solid var(--acc);outline-offset:1px}
+#mon{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}#mon span{flex:1;min-width:120px;font-size:13px;padding:6px 10px;border-radius:10px;background:var(--bg);color:var(--mut)}
+#mon .cur{background:var(--acc);color:#14213d;font-weight:700}#mon .past{color:var(--ok)}
+.rl{display:grid;grid-template-columns:100px 1fr 40px;gap:8px;align-items:center;font-size:13px;margin:6px 0}.rl em{font-style:normal;color:var(--mut);text-align:right}
+.bg{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.bg span{font-size:22px;width:40px;height:40px;display:grid;place-items:center;background:var(--bg);border-radius:12px}.bg .lk{filter:grayscale(1);opacity:.3}
+#ex{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}#ex p{margin:0 0 10px;font-size:14px}
+.wk{display:flex;gap:6px}.wk span{flex:1;text-align:center;padding:6px 0;border-radius:10px;background:var(--bg);color:var(--mut);font-size:13px}.wk .on{background:var(--ok);color:#fff}
+.tm{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}.tm b{font-size:28px;font-variant-numeric:tabular-nums}.tm span{color:var(--mut);font-size:13px}
+#qq{font-size:17px;font-weight:700;margin:6px 0 10px!important}#qa{color:var(--mut);margin:0 0 10px!important}#qw{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14px;margin:0 0 12px!important}
+.in{padding-left:18px;margin:8px 0 12px;font-size:14px}.in li{margin:6px 0}.mu{color:var(--mut);font-size:12px}
+.sp{display:flex;gap:4px;margin-top:6px}.bc{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px}.bv{font-size:11px;height:14px;font-weight:700}.bl{font-size:11px;color:var(--mut)}
+.bt{width:100%;height:84px;position:relative;display:flex;align-items:flex-end;background:var(--bg);border-radius:7px}.bt i{display:block;width:100%;background:linear-gradient(180deg,var(--acc2),#6a3fb5);border-radius:7px;transition:height .4s}
+.bt::after{content:'';position:absolute;left:-2px;right:-2px;bottom:var(--tg);border-top:1.5px dashed var(--acc);pointer-events:none}.tdy .bt i{background:linear-gradient(180deg,var(--acc),#e8821a)}.tdy .bl{color:var(--ink);font-weight:700}
+.sm{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;align-items:center}#rk h4{margin:14px 0 6px;font-size:14px}#rk h4:first-child{margin-top:0}
+.rl2{display:flex;justify-content:space-between;gap:8px;font-size:14px;padding:5px 0;border-bottom:1px solid var(--line)}.rl2 em{font-style:normal;color:var(--mut)}
+.rg{display:flex;gap:6px;margin:4px 0 6px}.rg button{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:3px 12px;font-size:12px}.rg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.lvc{display:flex;flex-direction:column}#lv{flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:16px}#lv h5{margin:0 0 4px;font-size:13px;color:var(--mut);font-weight:500}.rl .bar{grid-column:auto}
+.foot{color:var(--mut);font-size:13px;margin-top:24px;text-align:center}
+@media(max-width:560px){.hero{grid-template-columns:1fr}.ring{margin:auto}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style></head><body><div class="w">
+<div class="top"><b id="date"></b><span><button class="ghost" id="th">Theme</button> <button class="ghost" id="rs">Reset</button></span></div>
+<section class="hero"><div><p class="gr" id="gr"></p><h1 id="day"></h1><p class="q" id="quote"></p></div>
+<div class="ring"><svg width="150" height="150" viewBox="0 0 150 150"><circle cx="75" cy="75" r="64" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="12"/><circle id="arc" cx="75" cy="75" r="64" fill="none" stroke="#ffc447" stroke-width="12" stroke-linecap="round" stroke-dasharray="402" stroke-dashoffset="402"/></svg><span id="pct"></span></div></section>
+<div class="stats" id="stats"></div>
+<div class="row"><div class="card"><h3 id="mh">Pick anything you like</h3><div id="mis"></div><p style="margin:10px 0 0;display:flex;gap:8px;flex-wrap:wrap"><button class="cta" id="ci"></button> <button class="ghost" id="sp">Surprise me</button></p><div id="ex"></div></div><div class="card lvc"><h3>Your level</h3><div id="lv"></div></div></div>
+<div class="card"><h3>Skill map</h3><div class="sm"><div id="rad"></div><div id="rk"></div></div></div>
+<div class="card"><h3>Your 180 days</h3><div id="heat"></div></div>
+<div class="chips" id="chips"></div>
+<div id="list"></div>
+<p class="foot">Progress saves in this browser. Learn in any order you like. Every tick counts.</p>
+</div><div class="msg" id="msg" role="status"></div>
+<script>
+const D=`#Python & Coding|1
+Core language:Data types & mutability;Control flow;Functions;*args, **kwargs;Lambda, map, filter, reduce;Comprehensions (list/dict/set);Scope & closures;Exception handling;File handling & JSON/CSV
+Data structures:Lists;Tuples;Sets;Dictionaries;collections (Counter, defaultdict, deque);Complexity of operations
+Advanced Python:Decorators;Generators & yield;Iterators & iterables;Context managers;OOP (classes, inheritance, dunder methods);Dataclasses;Type hints;Async/await & concurrency (GIL);Copy vs deepcopy
+Production practice:Modules & packages;Virtual environments & dependencies;Logging;Unit tests (pytest);Debugging & profiling;Clean production-grade code;Time & space complexity
+Data libraries:NumPy (arrays, broadcasting, vectorization);Pandas (merge, groupby, pivot, apply, missing data);Matplotlib & Seaborn;Scikit-learn (pipelines, transformers);XGBoost;LightGBM;PySpark basics
+#SQL|1
+Querying basics:SELECT / WHERE / ORDER BY;GROUP BY / HAVING;Aggregate functions;CASE WHEN;NULL handling;DISTINCT / LIMIT
+Joins & sets:INNER / LEFT / RIGHT / FULL joins;Self & cross joins;UNION / UNION ALL;INTERSECT / EXCEPT
+Advanced queries:Subqueries;Correlated subqueries;EXISTS vs IN;CTEs & recursive CTEs;Date/time operations;String operations
+Window functions:ROW_NUMBER;RANK;DENSE_RANK;LAG / LEAD;Running totals & moving averages;NTILE & PARTITION BY frames
+Database design:Primary/foreign keys;Normalization (1NF-3NF);Indexes;Query optimization & EXPLAIN;Transactions & ACID;Views
+Classic problems:Nth highest;Deduplication;Retention & cohorts;Funnels
+#Math for ML|2
+Linear algebra:Vectors & matrices;Dot product & matrix multiplication;Eigenvalues & eigenvectors;SVD;Norms (L1, L2)
+Calculus:Derivatives & partial derivatives;Chain rule;Gradients
+Optimization:Gradient descent (batch, SGD, mini-batch);Learning rate;Convex vs non-convex;Loss functions
+Information theory:Entropy;Cross-entropy;KL divergence
+#Statistics & Probability|1
+Probability:Basics & counting;Conditional probability;Bayes theorem;Independent/dependent events;Random variables;Expected value;Variance & covariance;Law of large numbers
+Distributions:Bernoulli & Binomial;Poisson;Normal;Uniform;Exponential;t, chi-square, F
+Descriptive statistics:Mean / median / mode;Variance & standard deviation;Percentiles & IQR;Skewness & kurtosis;Correlation (Pearson, Spearman);Outliers
+Inference:Sampling & bias;Central Limit Theorem;Confidence intervals;Bootstrapping;Maximum likelihood (MLE);Bayesian vs frequentist
+Hypothesis testing:Null vs alternative;p-value;Type I / Type II errors;Statistical power;z-test;t-test;Chi-square test;ANOVA;Multiple testing (Bonferroni);Non-parametric tests
+A/B testing:Control vs treatment;Randomization;Metrics & guardrails;Sample size calculation;Significance & CIs;Pitfalls (peeking, novelty, SRM);Causal inference basics
+Regression statistics:Linear regression assumptions;Multicollinearity (VIF);Heteroscedasticity;Interpreting coefficients
+#Data Prep & EDA|1
+EDA:Data profiling;Univariate analysis;Bivariate analysis;Correlation analysis;Visualization
+Cleaning:Missing values (imputation);Outliers;Duplicates;Inconsistent types
+Transformations:Scaling (standard, min-max);Encoding (one-hot, target, ordinal);Log & power transforms;Binning;Text & date features
+#Machine Learning|1
+ML fundamentals:Supervised vs unsupervised vs RL;Train/validation/test split;Cross-validation;Bias vs variance;Underfitting / overfitting;Regularization;Data leakage;Class imbalance (SMOTE, class weights)
+Regression:Linear regression;Polynomial regression;Ridge (L2);Lasso (L1);Elastic Net;Regression trees;Regression metrics (MAE, MSE, RMSE, R², MAPE)
+Classification:Logistic regression;Decision trees;KNN;Naive Bayes;SVM;Classification metrics (precision, recall, F1, ROC-AUC);Threshold selection
+Ensembles:Bagging;Random Forest;Boosting;Gradient boosting;XGBoost;LightGBM;CatBoost;Stacking
+Unsupervised:K-Means;Hierarchical clustering;DBSCAN;Gaussian mixtures;PCA;t-SNE / UMAP;Dimensionality reduction;Clustering metrics (silhouette)
+Features:Feature engineering;Feature selection;Feature importance
+Tuning:Grid search;Random search;Bayesian optimization (Optuna);Early stopping
+Specialised ML:Time series (ARIMA, seasonality, forecasting validation);Recommender systems;Anomaly detection;Rare-event problems
+#Model Evaluation|1
+Classification metrics:Accuracy;Precision;Recall;F1;Specificity & sensitivity;Confusion matrix;ROC-AUC;PR-AUC;Log loss
+Regression metrics:MAE;MSE;RMSE;R²;MAPE
+Choosing metrics:When to use which metric and why;Defend recall over accuracy (depression project);Cost of false positives vs negatives;Calibration & thresholds
+Validation:Holdout vs k-fold vs stratified;Time-series validation;Offline vs online evaluation;Business metric alignment
+#Explainability (SHAP)|2
+Foundations:Explainability vs interpretability;Global vs local explanations;Feature importance;Permutation importance;PDP / ICE
+SHAP:Shapley values intuition;Why SHAP works;TreeSHAP;Summary & force plots;Limitations
+Other methods:LIME basics
+My story:Explain how I used SHAP at Havells
+#Deep Learning|1
+Neural network basics:Perceptron & MLP;Activation functions;Forward pass;Backpropagation;Loss functions;Weight initialization
+Training:Optimizers (SGD, Adam);Learning rate schedules;Dropout;Batch / layer norm;Vanishing / exploding gradients;Overfitting control
+Architectures:CNNs;RNN, LSTM, GRU;Autoencoders;GANs & diffusion basics;Transfer learning
+Frameworks:PyTorch basics;Training loop;GPU basics
+#NLP & Transformers|1
+NLP basics:Tokenization (BPE, WordPiece);Bag-of-words & TF-IDF;Word2Vec / GloVe;Text classification;NER;Similarity measures
+Transformers:Attention;Self-attention (Q, K, V);Multi-head attention;Positional encoding;Encoder vs decoder;BERT vs GPT;Hugging Face Transformers
+#Generative AI & LLMs|1
+LLM fundamentals:Tokens & tokenization;Context window;Embeddings;Inference;Temperature;Top-k & top-p;Hallucination;Open vs closed models;Llama 3.3 70B
+Prompt engineering:Zero-shot;Few-shot;System prompts;Chain-of-thought;Structured outputs (JSON);Prompt templates;Prompt evaluation
+LLM safety:Prompt injection;Jailbreaking;Guardrails;PII & data leakage
+Fine-tuning:Pretraining vs fine-tuning vs RAG;SFT;LoRA / QLoRA / PEFT;RLHF / DPO;When to fine-tune
+Inference & cost:Quantization;KV cache;Batching & latency;vLLM / serving;Token cost optimization;Caching
+#RAG|1
+Pipeline:Full pipeline from first principles (docs, ingestion, chunking, embeddings, vector DB, retrieval, context, LLM, response)
+Ingestion & chunking:Document ingestion & parsing;Chunking strategies;Chunk size;Chunk overlap;Metadata
+Retrieval:Embeddings;Cosine similarity;Semantic search;Keyword / BM25;Hybrid search;Top-k retrieval;Metadata filtering;Reranking;Query rewriting;Context compression
+Advanced RAG:Multi-hop retrieval;Agentic RAG;GraphRAG
+Evaluation:Retrieval evaluation (recall@k, MRR);RAG evaluation;Hallucination reduction;Failure modes
+#Embeddings & Vector DBs|2
+Embeddings:Vector representation;Embedding models;Dimensionality
+Similarity:Cosine similarity;Euclidean distance;Dot product
+Search:ANN search;HNSW / IVF;Indexing;Metadata filtering
+Tools:FAISS;Chroma;Pinecone-type architectures;Vector DB vs traditional DB
+#LangChain|1
+Core:Chains;Prompts;LCEL;Structured output;Memory
+Data:Document loaders;Text splitters;Vector stores;Retrievers
+Tools & agents:Tools;Agents;Callbacks
+Architecture:LangChain architecture;When not to use LangChain
+#LangGraph & Agentic AI|1
+Core concepts:Graph-based orchestration;Nodes;Edges;State;Conditional routing
+Agent patterns:Tool calling;ReAct;Agent loops;Multi-agent architecture
+Reliability:State management;Checkpointing;Error handling;Human-in-the-loop
+Operations:Agent evaluation;Agent observability
+Interview must:Why LangGraph instead of a simple chain?
+#AI Agents|1
+Concepts:What is an AI agent?;Agent vs chain vs workflow;Function calling;Planning;Reasoning;ReAct;Memory
+Systems:Multi-agent systems;Agent loops;Guardrails
+Quality:Agent evaluation;Agent observability;Failure modes
+#MCP|2
+Basics:What MCP is;MCP architecture;MCP client;MCP server
+Primitives:Tools;Resources;Prompts
+Comparisons:How an LLM interacts with MCP;MCP vs API;MCP vs function calling;Why MCP is useful
+Enterprise:Security considerations;Authentication / authorization;MCP in enterprise AI;Discuss my actual investigation
+#LLM & AI Evaluation|1
+Quality metrics:Accuracy;Groundedness;Relevance;Faithfulness;Hallucination;Toxicity;Bias
+Retrieval & response:Retrieval quality;Response quality
+Methods:LLM-as-a-judge;Evaluation datasets;Offline vs online evaluation;Human evaluation;Tools (RAGAS etc)
+#AI Observability|1
+Metrics:Latency;P95 latency;Throughput;Token consumption;Cost monitoring / burn rate;Error rates
+Quality:Guardrail violations;Model quality;Drift (data, concept)
+Instrumentation:Logging;Tracing;Inference monitoring;Alerting
+Interview must:How would I monitor an LLM/agent in production?
+#AI Governance & Responsible AI|1
+Principles:Responsible AI;Fairness & bias;Transparency;Explainability;Privacy
+Governance:AI governance;Model governance;AI risk;Model risk;Compliance;Regulations (EU AI Act awareness)
+Controls:Auditability;Data governance;Access control;Model monitoring;Guardrails;AI policy enforcement
+My platform:AI maturity assessment (43 questions);Explain all 6 governance modules
+#MLOps & Deployment|1
+MLflow:Experiment tracking;Runs, params, metrics;Artifacts;Model registry;Model versioning;Model lifecycle
+Deployment:Batch vs real-time serving;Model deployment;Canary / A-B / shadow;Model endpoints
+Pipelines:CI/CD for ML;Feature stores;Data & model versioning;Retraining
+Monitoring:Drift detection;Performance decay
+#Databricks & Spark|1
+Platform:Architecture;Workspaces;Notebooks;Jobs
+Lakehouse:Delta Lake;Delta tables;Time travel;Unity Catalog
+AI on Databricks:Model Serving;Genie;MLflow integration;Inference tables;Databricks SQL
+Governance:Monitoring;Governance;Access control
+Spark:Spark architecture;DataFrames;Lazy evaluation;Partitioning & shuffles
+#Data Engineering|3
+Pipelines:ETL vs ELT;Data pipelines;Batch vs streaming;Data ingestion;Data transformation;Orchestration (Airflow awareness)
+Storage:Data warehouses;Data lakes;Lakehouse;Partitioning;Schema evolution
+Quality:Data quality;Data lineage
+#FastAPI & APIs|2
+HTTP & REST:REST;HTTP;GET / POST / PUT / DELETE;Status codes;Request / response;JSON
+FastAPI:Pydantic;Async vs sync;Error handling;Dependency injection
+Production:API authentication;API deployment;API architecture;Rate limiting
+#Docker & Cloud|2
+Docker:Containers;Images;Dockerfile;Docker Compose;Ports;Volumes;Environment variables;Containerized deployment
+CI/CD:CI/CD concepts
+Azure:Azure services;Cognitive Services;Logic Apps;Storage & compute;Authentication
+AWS:S3;EC2;IAM;Lambda
+#n8n & Workflow Automation|3
+Basics:Workflow automation;Triggers;Nodes;Webhooks
+Integrations:API integration;Google Sheets;Email automation
+Logic:Conditional routing;Error handling
+#Git & Software Engineering|2
+Git:Branching;Merge;Rebase;Pull requests;Conflict resolution
+Engineering:CI/CD basics;Code reviews;Testing;Clean code;Debugging
+#DSA|3
+Basics:Arrays;Strings;Hash maps;Stack;Queue;Linked lists
+Trees & graphs:Trees;BST;Heap;Graphs;BFS;DFS
+Algorithms:Binary search;Sorting;Recursion;Backtracking;Dynamic programming;Greedy
+Patterns:Two pointers;Sliding window;Prefix sums
+#System Design|2
+Fundamentals:Scalability;Availability;Reliability;Load balancing;Caching;Databases;APIs;Message queues;Microservices;Monitoring;Logging;Rate limiting
+AI systems to design:RAG system;LLM application;Agentic AI system;LLM monitoring platform;AI governance platform;Model serving architecture;ML pipeline / recommender
+#Product & Business Thinking|2
+Value:Business requirements;KPIs;Metrics;ROI;Why does this AI system create business value?
+Delivery:User requirements;Cost vs performance;Trade-offs;Risk;Scalability;Productionization
+#My CV Stories|1
+Governance platform:6 governance modules;14+ Delta tables;Llama 3.3 70B;43-question maturity assessment
+Databricks work:Genie;50+ model serving endpoints;P95 latency;Cost burn rate;Unity Catalog
+Agents & MCP:LangGraph ReAct agent;MCP investigation
+ML projects:Havells ML/NPS + SHAP;Depression prediction (recall vs accuracy);Vehicle Complaint Intelligence System (FastAPI + LangChain + HF + n8n)
+Experience:MAQ Software engineering work;Behavioural stories (STAR)`.split('\n#').map(b=>b.replace(/^#/,'').split('\n')).map(L=>{const[n,t]=L[0].split('|');return{n,t:+t,s:L.slice(1).filter(Boolean).map(l=>{const k=l.indexOf(':');return{n:l.slice(0,k),i:l.slice(k+1).split(';')}})}});
+const Q=["Today's hour of practice is a gift to your future self.","You don't need to be perfect. You need to show up.","Every concept you master is a door you never have to knock on again.","Interviewers can't take away what you truly understand.","Small steps, taken daily, move mountains by month six.","Confusion is just understanding on its way. Keep going.","Be the person who explains it simply, because you learned it deeply.","Discipline is choosing what you want most over what you want now.","One checkbox today. One offer letter later.","You've already built real systems. Now own the story.","Hard days still count. Check in anyway.","Consistency beats intensity. Return tomorrow.","The best way to know a thing is to teach it. Explain it out loud.","Progress is quiet. Trust the process.","Your CV is true. Make your answers prove it.","Don't compare your day 20 to someone else's day 200.","A little better than yesterday is plenty.","Fear shrinks when you practise the thing it points at.","Mistakes in prep are free. Mistakes in interviews are expensive. Make them now.","You are closer than you were this morning.","Depth wins. Go one level deeper than comfortable.","Rest is part of training. Then get back to it.","The version of you in six months is counting on today.","Keep the streak. Protect the habit.","Curiosity is your edge. Ask why, then ask why again.","Ship the understanding, not just the notes.","Today's confusion is tomorrow's confident answer.","Show up even when motivation doesn't.","You're building a skill set, not cramming a test.","Every checked box is proof you can do hard things."];
+const K='ck180',DAY=864e5,TOT=180;
+let S={start:Date.now(),done:{},log:[],open:{}},F=0;
+try{const r=JSON.parse(localStorage.getItem(K));if(r)S=r}catch(e){}
+const sv=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};sv();
+const $=id=>document.getElementById(id),dk=d=>new Date(d).toISOString().slice(0,10),today=()=>dk(Date.now()-new Date().getTimezoneOffset()*6e4);
+const kk=(t,s,j)=>t.n+'|'+s.n+'|'+j;
+const sc=(t,s)=>s.i.filter((_,j)=>S.done[kk(t,s,j)]).length;
+const len=t=>t.s.reduce((a,s)=>a+s.i.length,0);
+const cnt=t=>t.s.reduce((a,s)=>a+sc(t,s),0);
+const total=D.reduce((a,t)=>a+len(t),0);
+function toast(m){const e=$('msg');e.textContent=m;e.classList.add('on');setTimeout(()=>e.classList.remove('on'),2600)}
+function streak(){let s=0,d=new Date(today()+'T00:00');if(!S.log.includes(dk(d.getTime()-d.getTimezoneOffset()*6e4)))d=new Date(d-DAY);
+while(S.log.includes(dk(d.getTime()-d.getTimezoneOffset()*6e4))){s++;d=new Date(d-DAY)}return s}
+const cv=document.createElement('canvas');cv.style.cssText='position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:8';document.body.appendChild(cv);
+function boom(s=1){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const c=cv.getContext('2d');cv.width=innerWidth;cv.height=innerHeight;const P=Array.from({length:(90*s)|0},()=>({x:innerWidth/2,y:innerHeight*.6,vx:(Math.random()-.5)*14,vy:-Math.random()*14-4,r:Math.random()*5+3,c:['#ffc447','#2f4bd6','#1f9d6b','#d6453d','#fff'][Math.random()*5|0],l:1}));
+(function f(){c.clearRect(0,0,cv.width,cv.height);let a=0;P.forEach(p=>{p.vy+=.4;p.x+=p.vx;p.y+=p.vy;p.l-=.012;if(p.l>0){a=1;c.globalAlpha=p.l;c.fillStyle=p.c;c.fillRect(p.x,p.y,p.r,p.r*1.4)}});if(a)requestAnimationFrame(f)})()}
+let RG=7;
+function extra(day){
+const h=new Date().getHours();$('gr').textContent=(h<12?'Good morning':h<17?'Good afternoon':'Good evening')+', Utsav. Your future self is counting on today.';
+const U=[];D.forEach(t=>t.s.forEach(q=>{if(sc(t,q)<q.i.length)U.push([t,q])}));
+const c=S.last&&(U.find(a=>a[0].n==S.last[0]&&a[1].n==S.last[1])||U.find(a=>a[0].n==S.last[0]));
+const m=[];if(c)c[1].i.forEach((y,j)=>{if(m.length<3&&!S.done[kk(c[0],c[1],j)])m.push([kk(c[0],c[1],j),y])});
+$('mh').textContent=c?'Continue: '+c[0].n+' › '+c[1].n:'Pick anything you like';
+$('mis').innerHTML=m.length?m.map(a=>`<label><input type="checkbox" data-k="${a[0]}"><span>${a[1]}</span></label>`).join(''):'<p>Open any topic below and tick what you know, or tap Surprise me.</p>';
+const tz=new Date().getTimezoneOffset()*6e4;
+$('heat').innerHTML=Array.from({length:TOT},(_,i)=>{const d=i+1,c=S.log.includes(dk(S.start+i*DAY-tz))?'on':d>day?'fut':d<day?'miss':'';return `<i class="${c}${d==day?' now':''}" title="Day ${d}"></i>`}).join('');
+const pc=D.reduce((a,t)=>a+cnt(t),0)/total*100,R=[[0,'Starter'],[5,'Explorer'],[15,'Builder'],[30,'Practitioner'],[50,'Specialist'],[70,'Expert'],[90,'Interview-ready'],[100,'Offer-ready']];let ri=0;R.forEach((r,i)=>{if(pc>=r[0])ri=i});
+const xp=D.reduce((a,t)=>a+cnt(t),0)*10+S.log.length*25,nx=R[ri+1],st=streak(),dn=Math.round(pc);
+const RT=ns=>{let a=0,b=0;D.forEach(t=>{if(ns.includes(t.n)){a+=cnt(t);b+=len(t)}});return Math.round(a/b*100)};
+const roles=[['Data Scientist',RT(['Python & Coding','SQL','Math for ML','Statistics & Probability','Data Prep & EDA','Machine Learning','Model Evaluation','Explainability (SHAP)','Product & Business Thinking']),'var(--acc2)'],['ML Engineer',RT(['Python & Coding','Machine Learning','Model Evaluation','Deep Learning','MLOps & Deployment','Databricks & Spark','FastAPI & APIs','Docker & Cloud','Git & Software Engineering','System Design','DSA']),'var(--ok)'],['GenAI Engineer',RT(['NLP & Transformers','Generative AI & LLMs','RAG','Embeddings & Vector DBs','LangChain','LangGraph & Agentic AI','AI Agents','MCP','LLM & AI Evaluation','AI Observability','AI Governance & Responsible AI','FastAPI & APIs']),'var(--acc)']];
+const B=[['🌱','First tick',dn>0||xp>0],['🔥','3-day streak',st>=3],['⚡','7-day streak',st>=7],['🧩','Finish a section',D.some(t=>t.s.some(q=>sc(t,q)==q.i.length))],['🏆','Finish a topic',D.some(t=>cnt(t)==len(t))],['🚀','25% done',pc>=25],['💎','50% done',pc>=50],['👑','100% done',pc>=100]];
+const TP=[1,2,3].map(k=>{let a=0,b=0;D.forEach(t=>{if(t.t==k){a+=cnt(t);b+=len(t)}});return Math.round(a/b*100)}),rr=(n,v,c)=>`<div class="rl"><span>${n}</span><div class="bar" style="--c:${c}"><i style="width:${v}%"></i></div><em>${v}%</em></div>`;
+$('lv').innerHTML=`<div><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:26px">${R[ri][1]}</b><span style="color:var(--mut);font-size:14px">${xp} XP</span></div><div class="bar" style="--c:var(--acc);margin:8px 0 4px"><i style="width:${nx?(pc-R[ri][0])/(nx[0]-R[ri][0])*100:100}%"></i></div><p class="mu" style="margin:0;font-size:13px">${nx?'Next rank: '+nx[1]+' at '+nx[0]+'%':'Top rank reached'}</p></div><div><h5>Role readiness</h5>${roles.map(r=>rr(r[0],r[1],r[2])).join('')}</div><div><h5>Priority tiers</h5>${rr('Very strong',TP[0],'var(--t1)')}${rr('Strong',TP[1],'var(--t2)')}${rr('Medium',TP[2],'var(--t3)')}</div><div><h5>Badges</h5><div class="bg">${B.map(b=>`<span class="${b[2]?'':'lk'}" title="${b[1]}">${b[0]}</span>`).join('')}</div><p class="mu" style="margin:8px 0 0">${B.filter(b=>!b[2]).length?'Next to unlock: '+B.filter(b=>!b[2]).map(b=>b[1]).slice(0,2).join(', '):'All badges unlocked'}.</p></div>`;
+const H=S.hist||{},td=today(),dd=Math.round(pc*total/100),w7=[0,1,2,3,4,5,6].reduce((a,i)=>a+(H[dk(Date.now()-i*DAY-tz)]||0),0),rate=w7/Math.min(7,day),left=TOT-day+1;
+const stat=D.map(t=>({n:t.n,t:t.t,c:cnt(t),l:len(t),p:cnt(t)/len(t)})),top=stat.filter(a=>a.c>0).sort((a,b)=>b.p-a.p).slice(0,3),low=[...stat].filter(a=>a.p<1).sort((a,b)=>a.t-b.t||a.p-b.p||b.l-a.l).slice(0,4);
+const need=total-dd,dn2=rate>0?Math.ceil(need/rate):0;
+const I=[`Today: <b>${H[td]||0}</b> items ticked. Last 7 days: <b>${w7}</b> (${rate.toFixed(1)}/day).`,
+rate>0?`At this pace you finish in <b>${dn2} days</b> (${new Date(Date.now()+dn2*DAY).toLocaleDateString(undefined,{month:'short',day:'numeric'})}), ${dn2<=left?'<b>ahead of</b> or on track for':'about <b>'+(dn2-left)+' days past</b>'} your 180-day goal.`:'Tick a few items and your finish-date projection appears here.',
+top.length?`Strongest area: <b>${top[0].n}</b> at ${Math.round(top[0].p*100)}%.`:'Your strongest area shows up after your first ticks.',
+low[0]?`Biggest priority gap: <b>${low[0].n}</b> (${low[0].c}/${low[0].l} done).`:'No gaps left. Everything is complete.',
+nx?`<b>${Math.max(1,Math.ceil(nx[0]/100*total-dd))}</b> more items to reach <b>${nx[1]}</b>.`:'You have reached the top rank.'];
+const n=Math.max(7,Math.min(RG||TOT,day));
+const mx=Math.max(1,...Array.from({length:n},(_,i)=>H[dk(Date.now()-i*DAY-tz)]||0));
+const tg=Math.max(1,Math.ceil(Math.max(0,need)/left)),sc2=Math.max(mx,tg);
+const vs=Array.from({length:n},(_,i)=>H[dk(Date.now()-(n-1-i)*DAY-tz)]||0),ym=Math.max(4,Math.ceil(sc2*1.15)+(Math.ceil(sc2*1.15)%2)),X=i=>34+i*(356/(n-1)),Y=v=>14+94*(1-v/ym),P2=vs.map((v,i)=>[X(i),Y(v)]);
+const sm=P2.map((q,i)=>{if(!i)return 'M'+q[0].toFixed(1)+','+q[1].toFixed(1);const o=P2[i-1],m=((o[0]+q[0])/2).toFixed(1);return 'C'+m+','+o[1].toFixed(1)+' '+m+','+q[1].toFixed(1)+' '+q[0].toFixed(1)+','+q[1].toFixed(1)}).join(' ');
+let pm=-1;const MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],lb=i=>{const d=new Date(Date.now()-(n-1-i)*DAY-tz),dd=d.getUTCDate(),mo=d.getUTCMonth(),x=X(i),b=i==n-1,st=n<=14?1:n<=45?Math.ceil(n/6):0,tx=(y,t,z,f,w)=>`<text x="${x}" y="${y}" font-size="${z}" fill="${f}" font-weight="${w}" text-anchor="middle">${t}</text>`;
+if(st){if((n-1-i)%st)return '';const sub=mo!=pm?tx(143,MO[mo],10,'var(--mut)',400):'';pm=mo;return tx(130,dd,11,b?'var(--ink)':'var(--mut)',b?700:400)+sub}
+if(i==0||dd==1)return tx(130,MO[mo],11,'var(--mut)',400);return ''};
+const rb=[[7,'7D',0],[30,'30D',7],[90,'90D',30],[0,'All',90]].filter(a=>day>a[2]);
+const chart=`<svg viewBox="0 0 412 150" width="100%" role="img" aria-label="Items ticked per day, last ${n} days"><defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--acc2)" stop-opacity=".45"/><stop offset="1" style="stop-color:var(--acc2)" stop-opacity="0"/></linearGradient></defs>${vs.some(Boolean)?'':'<text x="206" y="72" text-anchor="middle" font-size="12" fill="var(--mut)">Your line appears as you tick items</text>'}${[0,.5,1].map(f=>`<line x1="30" x2="394" y1="${Y(ym*f)}" y2="${Y(ym*f)}" stroke="var(--line)"/><text x="24" y="${Y(ym*f)+3}" font-size="9" fill="var(--mut)" text-anchor="end">${Math.round(ym*f)}</text>`).join('')}<path d="${sm} L${X(n-1)},${Y(0)} L${X(0)},${Y(0)} Z" fill="url(#ag)"/><line x1="30" x2="394" y1="${Y(tg)}" y2="${Y(tg)}" stroke="var(--acc)" stroke-dasharray="5 4" stroke-width="1.5"/><path d="${sm}" fill="none" stroke="var(--acc2)" stroke-width="2.5" stroke-linecap="round"/>${P2.map((q,i)=>`${n<=14||vs[i]||i==n-1?`<circle cx="${q[0]}" cy="${q[1]}" r="${i==n-1?(n>14?3.5:5):(n>14?1.8:3)}" fill="${i==n-1?'var(--acc)':'var(--card)'}" stroke="${i==n-1?'var(--card)':'var(--acc2)'}" stroke-width="2"><title>${dk(Date.now()-(n-1-i)*DAY-tz)}: ${vs[i]} items</title></circle>`:''}${vs[i]&&n<=14?`<text x="${q[0]}" y="${q[1]-9}" font-size="9" font-weight="700" fill="var(--ink)" text-anchor="middle">${vs[i]}</text>`:''}${lb(i)}`).join('')}</svg>`;
+$('ex').innerHTML=`<b>Progress analysis</b><ul class="in">${I.map(x=>`<li>${x}</li>`).join('')}</ul>${rb.length>1?`<div class="rg">${rb.map(a=>`<button data-rg="${a[0]}" aria-pressed="${RG==a[0]}">${a[1]}</button>`).join('')}</div>`:''}${chart}<small class="mu">Line: items ticked per day, last ${n} days. Dashed line: ${tg}/day needed to finish on time. Gold dot: today.</small>`;
+const G=[['Foundations',['Python & Coding','SQL','Math for ML','Statistics & Probability','Data Prep & EDA']],['ML & DL',['Machine Learning','Model Evaluation','Explainability (SHAP)','Deep Learning']],['GenAI',['NLP & Transformers','Generative AI & LLMs','RAG','Embeddings & Vector DBs','LangChain','LangGraph & Agentic AI','AI Agents','MCP','LLM & AI Evaluation']],['Production',['AI Observability','AI Governance & Responsible AI','MLOps & Deployment','Databricks & Spark','Data Engineering','FastAPI & APIs','Docker & Cloud','n8n & Workflow Automation','Git & Software Engineering']],['Interview',['DSA','System Design','Product & Business Thinking','My CV Stories']]];
+const pt=(i,r)=>{const a=(-90+72*i)*Math.PI/180;return [130+r*Math.cos(a),130+r*Math.sin(a)]},ring=f=>G.map((_,i)=>pt(i,90*f).join(',')).join(' '),vals=G.map(g=>RT(g[1]));
+$('rad').innerHTML=`<svg viewBox="-50 0 360 260" width="100%" style="max-width:340px" role="img" aria-label="Skill map radar">${[.25,.5,.75,1].map(f=>`<polygon points="${ring(f)}" fill="none" stroke="var(--line)"/>`).join('')}${G.map((_,i)=>`<line x1="130" y1="130" x2="${pt(i,90)[0]}" y2="${pt(i,90)[1]}" stroke="var(--line)"/>`).join('')}<polygon points="${vals.map((v,i)=>pt(i,Math.max(3,90*v/100)).join(',')).join(' ')}" fill="var(--acc2)" fill-opacity=".35" stroke="var(--acc2)" stroke-width="2"/>${G.map((g,i)=>{const q=pt(i,104);return `<text x="${q[0]}" y="${q[1]}" font-size="11" fill="var(--ink)" text-anchor="${q[0]<120?'end':q[0]>140?'start':'middle'}" dominant-baseline="middle">${g[0]} ${vals[i]}%</text>`}).join('')}</svg>`;
+const rw=a=>`<div class="rl2"><span>${a.n}</span><em>${a.c}/${a.l}</em></div>`;
+$('rk').innerHTML='<h4>Strongest</h4>'+(top.length?top.map(rw).join(''):'<p class="mu">Appears after your first ticks.</p>')+'<h4>Needs attention (high-priority first)</h4>'+low.map(rw).join('');}
+function render(){
+const day=Math.min(TOT,Math.max(1,Math.floor((Date.now()-S.start)/DAY)+1)),done=D.reduce((a,t)=>a+cnt(t),0),p=Math.round(done/total*100);
+$('date').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
+$('day').innerHTML='Day '+day+' <small>of '+TOT+'</small>';
+$('quote').textContent=Q[(day-1)%Q.length];
+$('pct').textContent=p+'%';$('arc').style.strokeDashoffset=402*(1-p/100);
+const left=TOT-day+1,need=Math.max(0,total-done),pace=(need/left).toFixed(1);
+$('stats').innerHTML=[[done+'/'+total,'items checked'],[left,'days left'],[pace,'checks/day to finish'],[streak()+' 🔥','day streak']].map(a=>`<div class="st"><b>${a[0]}</b><i>${a[1]}</i></div>`).join('');
+
+const ci=S.log.includes(today());$('ci').textContent=ci?'Checked in ✓':'I studied today';$('ci').className='cta'+(ci?' done':'');
+extra(day);const L=[['All',0],['Very strong',1],['Strong',2],['Medium',3]];
+$('chips').innerHTML=L.map(a=>`<button aria-pressed="${F==a[1]}" data-f="${a[1]}">${a[0]}</button>`).join('');
+$('list').innerHTML=D.map((t,x)=>({t,x})).filter(o=>!F||o.t.t==F).map(({t,x})=>{const c=cnt(t),n=len(t),f=c==n;
+return `<div class="t${f?' fin':''}${S.open[t.n]?' open':''}" style="--c:var(--t${t.t})"><button class="h" data-o="${t.n}" aria-expanded="${!!S.open[t.n]}"><strong>${x+1}. ${t.n}${f?' ✓':''}</strong><em>${c}/${n} · ${t.s.length} sections</em><span class="bar"><i style="width:${c/n*100}%"></i></span></button><div class="b">${t.s.map(q=>{const k=sc(t,q),m=q.i.length;return `<div class="sec${k==m?' sd':''}"><h4><span>${q.n}</span><em>${k}/${m}</em></h4>${q.i.map((y,j)=>`<label><input type="checkbox" data-k="${kk(t,q,j)}" ${S.done[kk(t,q,j)]?'checked':''}><span>${y}</span></label>`).join('')}</div>`}).join('')}</div></div>`}).join('');
+}
+document.addEventListener('click',e=>{const o=e.target.closest('[data-o]'),f=e.target.closest('[data-f]');
+if(o){S.open[o.dataset.o]=!S.open[o.dataset.o];sv();render()}
+if(f){F=+f.dataset.f;render()}
+if(e.target.id=='ci'&&!S.log.includes(today())){S.log.push(today());sv();render();toast('Day logged. Streak: '+streak()+'. Keep going!');boom(.6)}
+{const rg=e.target.closest('[data-rg]');if(rg){RG=+rg.dataset.rg;render()}}
+if(e.target.id=='sp'){const V=[];D.forEach(t=>t.s.forEach(q=>{if(sc(t,q)<q.i.length)V.push([t.n,q.n])}));if(V.length){S.last=V[Math.random()*V.length|0];sv();render()}}
+if(e.target.id=='th'){const r=document.documentElement,d=r.dataset.theme=='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=d?'light':'dark'}
+if(e.target.id=='rs'){const b=e.target;if(!window.rc){window.rc=1;b.textContent='Tap again to erase everything';setTimeout(()=>{window.rc=0;b.textContent='Reset'},4000)}else{window.rc=0;b.textContent='Reset';S={start:Date.now(),done:{},log:[],open:{}};sv();render();toast('Progress cleared. Day 1 starts now.')}}});
+document.addEventListener('change',e=>{const k=e.target.dataset.k;if(!k)return;const pr=k.split('|');S.last=[pr[0],pr[1]];S.hist=S.hist||{};{const dy=today();S.hist[dy]=Math.max(0,(S.hist[dy]||0)+(e.target.checked?1:-1))}S.done[k]=e.target.checked;sv();const sy=scrollY;render();scrollTo(0,sy);
+if(e.target.checked){const t=D.find(t=>k.startsWith(t.n+'|'));if(t){if(cnt(t)==len(t)){toast(t.n+' complete. 🎉');boom()}else{const q=t.s.find(q=>k.startsWith(t.n+'|'+q.n+'|'));if(q&&sc(t,q)==q.i.length){toast(q.n+' section done ✨');boom(.5)}}}}});
+render();
+</script></body></html>
